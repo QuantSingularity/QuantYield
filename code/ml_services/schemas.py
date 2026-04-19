@@ -6,7 +6,6 @@ Defines the contracts that all ML models in this package must satisfy.
 from dataclasses import dataclass, field
 from typing import Optional
 
-
 # ---------------------------------------------------------------------------
 # Forecast output contract
 # ---------------------------------------------------------------------------

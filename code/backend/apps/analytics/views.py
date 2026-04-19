@@ -20,7 +20,7 @@ from services.data_feed import (
     fetch_treasury_curve,
     fetch_yield_history,
 )
-from services.risk import price_change_approximation
+from services.pricing import price_change_approximation
 from services.schemas import BondSchema, CurvePointSchema
 
 logger = logging.getLogger("quantyield")
