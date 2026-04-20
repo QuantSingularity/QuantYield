@@ -1,0 +1,276 @@
+/* ============================================================
+   QuantYield — Global Design System
+   Modern 2025 dark institutional theme
+   ============================================================ */
+
+:root {
+  /* Core backgrounds */
+  --bg-base: #070b14;
+  --bg-subtle: #0c1220;
+  --bg-surface: #101827;
+  --bg-overlay: #14203a;
+  --bg-card: #111927;
+  --bg-card-hover: #16203080;
+  --bg-input: #0d1624;
+  --bg-modal: rgba(7, 11, 20, 0.92);
+
+  /* Borders */
+  --border-dim: rgba(99, 120, 180, 0.1);
+  --border: rgba(99, 120, 180, 0.16);
+  --border-strong: rgba(99, 120, 180, 0.28);
+  --border-focus: #6366f1;
+
+  /* Brand — Indigo */
+  --indigo-50: #eef2ff;
+  --indigo-400: #818cf8;
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --indigo-700: #4338ca;
+  --indigo-glow: rgba(99, 102, 241, 0.15);
+  --indigo-ring: rgba(99, 102, 241, 0.25);
+
+  /* Accent — Teal */
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-glow: rgba(20, 184, 166, 0.12);
+
+  /* Semantic */
+  --green: #10b981;
+  --green-dim: #064e3b;
+  --green-glow: rgba(16, 185, 129, 0.12);
+  --red: #ef4444;
+  --red-dim: #7f1d1d;
+  --red-glow: rgba(239, 68, 68, 0.12);
+  --amber: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.12);
+  --sky: #38bdf8;
+  --sky-glow: rgba(56, 189, 248, 0.12);
+  --violet: #a78bfa;
+  --violet-glow: rgba(167, 139, 250, 0.12);
+  --rose: #fb7185;
+  --rose-glow: rgba(251, 113, 133, 0.12);
+
+  /* Text */
+  --text-primary: #f0f4ff;
+  --text-secondary: #8898b8;
+  --text-muted: #4e6080;
+  --text-accent: var(--teal-400);
+  --text-link: var(--indigo-400);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Radius */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-indigo: 0 0 0 3px var(--indigo-ring);
+  --shadow-glow-indigo: 0 0 24px rgba(99, 102, 241, 0.25);
+  --shadow-glow-teal: 0 0 24px rgba(20, 184, 166, 0.2);
+
+  /* Transitions */
+  --t-fast: 0.1s ease;
+  --t-base: 0.18s ease;
+  --t-slow: 0.3s ease;
+
+  /* Layout */
+  --sidebar-w: 248px;
+  --topbar-h: 60px;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+img,
+svg {
+  display: block;
+}
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 120, 180, 0.4);
+}
+
+/* ── Utilities ──────────────────────────────────────────── */
+.mono {
+  font-family: var(--font-mono) !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ── Focus ring ─────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--indigo-500);
+  outline-offset: 2px;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--text-primary);
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.45);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease both;
+}
+.animate-fade-up {
+  animation: fadeInUp 0.3s ease both;
+}
+.animate-slide-in {
+  animation: slideInRight 0.2s ease both;
+}
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
