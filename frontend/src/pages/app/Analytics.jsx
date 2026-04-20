@@ -144,14 +144,12 @@ export default function Analytics() {
     ["history", "Yield History"],
   ];
 
-  const histData = history10y.labels
-    .slice(-120)
-    .map((d, i) => ({
-      date: d.slice(5),
-      "10Y": +(history10y.rates.slice(-120)[i] * 100).toFixed(3),
-      "2Y": +(history2y.rates.slice(-120)[i] * 100).toFixed(3),
-      "5Y": +(history5y.rates.slice(-120)[i] * 100).toFixed(3),
-    }));
+  const histData = history10y.labels.slice(-120).map((d, i) => ({
+    date: d.slice(5),
+    "10Y": +(history10y.rates.slice(-120)[i] * 100).toFixed(3),
+    "2Y": +(history2y.rates.slice(-120)[i] * 100).toFixed(3),
+    "5Y": +(history5y.rates.slice(-120)[i] * 100).toFixed(3),
+  }));
 
   // rolling vol
   const volData = history10y.rates.slice(-90).map((r, i, arr) => {
