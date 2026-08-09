@@ -4,6 +4,10 @@ Institutional-grade fixed income analytics platform. Provides bond pricing,
 yield curve modelling, portfolio risk management, scenario analysis, and
 AI-powered rate forecasting through a clean versioned REST API.
 
+<div align="center">
+  <img src="docs/images/homepage.bmp" alt="QuantYield HomePage" width="80%">
+</div>
+
 ---
 
 ## Repository Structure
