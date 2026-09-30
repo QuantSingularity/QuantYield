@@ -1,5 +1,5 @@
 """
-QuantYield — Data Feed
+QuantYield - Data Feed
 Live US Treasury par yields from FRED API with Django cache backend.
 Graceful fallback to representative synthetic curve and history.
 """

@@ -1,5 +1,5 @@
 """
-QuantYield — Pricing Engine
+QuantYield - Pricing Engine
 Full cash-flow discounting for fixed-rate, zero-coupon, and callable bonds.
 Supports four day-count conventions and four coupon frequencies.
 YTM solved via Brent's method (scipy) with 1e-10 convergence tolerance.
@@ -77,7 +77,7 @@ def generate_coupon_dates(bond: BondSchema, settlement: date) -> list[date]:
 
 
 def cash_flows(bond: BondSchema, settlement: date, ytm: float) -> list[dict]:
-    """Discounted cash flow schedule — coupon + principal with PV."""
+    """Discounted cash flow schedule - coupon + principal with PV."""
     freq = FREQUENCY_MAP.get(bond.coupon_frequency, 2)
     coupon_dates = generate_coupon_dates(bond, settlement)
 

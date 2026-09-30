@@ -1,5 +1,5 @@
 """
-QuantYield — Yield Curve Models
+QuantYield - Yield Curve Models
 """
 
 import uuid
@@ -50,7 +50,7 @@ class YieldCurve(models.Model):
         verbose_name_plural = "Yield Curves"
 
     def __str__(self):
-        return f"{self.name} ({self.model}) — {self.as_of_date}"
+        return f"{self.name} ({self.model}) - {self.as_of_date}"
 
 
 class CurveDataPoint(models.Model):

@@ -1,5 +1,5 @@
 """
-QuantYield — Risk Analytics
+QuantYield - Risk Analytics
 Portfolio duration/convexity, scenario analysis, VaR/CVaR, CS01, duration buckets, P&L.
 """
 

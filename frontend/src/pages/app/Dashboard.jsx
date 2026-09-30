@@ -564,7 +564,7 @@ export default function Dashboard() {
         {/* Scenario heatmap */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">Scenario P&L — Core FI</span>
+            <span className="card-title">Scenario P&L - Core FI</span>
             <Link to="/app/portfolios" className="card-action">
               All Scenarios →
             </Link>

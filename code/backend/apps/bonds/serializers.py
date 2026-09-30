@@ -1,5 +1,5 @@
 """
-QuantYield — Bond Serializers
+QuantYield - Bond Serializers
 Handles serialization, nested call schedules, and computed analytics fields.
 """
 
@@ -95,7 +95,7 @@ class BondSerializer(serializers.ModelSerializer):
 
 
 class BondUpdateSerializer(serializers.ModelSerializer):
-    """Partial-update serializer — only editable metadata fields."""
+    """Partial-update serializer - only editable metadata fields."""
 
     class Meta:
         model = Bond

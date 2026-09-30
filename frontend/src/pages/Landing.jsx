@@ -160,7 +160,7 @@ export default function Landing() {
           </h1>
           <p className="hero-sub">
             Bond pricing engines, yield curve modelling, portfolio risk
-            analytics, and AI-powered forecasting — built for quants, portfolio
+            analytics, and AI-powered forecasting - built for quants, portfolio
             managers, and risk teams.
           </p>
           <div className="hero-actions">
@@ -356,7 +356,7 @@ export default function Landing() {
             <h2 className="section-title">Everything your desk needs</h2>
             <p className="section-desc">
               Institutional-grade quant models, clean REST API, and AI-powered
-              analytics — all in one platform.
+              analytics - all in one platform.
             </p>
           </div>
           <div className="features-grid">

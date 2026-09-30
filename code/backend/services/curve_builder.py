@@ -1,5 +1,5 @@
 """
-QuantYield — Yield Curve Builder
+QuantYield - Yield Curve Builder
 Nelson-Siegel, Svensson, Bootstrap, Cubic Spline.
 Forward rates, par yields, regime detection.
 """
@@ -271,19 +271,19 @@ def detect_regime(spot_rates: dict[float, float]) -> dict:
 
     if abs(slope_2s10s_bps) < 15:
         regime = "flat"
-        desc = "Curve is flat — 2s10s spread within ±15bps"
+        desc = "Curve is flat - 2s10s spread within ±15bps"
     elif slope_2s10s_bps > 100:
         regime = "steep"
-        desc = f"Curve is steeply upward sloping — 2s10s at {slope_2s10s_bps:.0f}bps"
+        desc = f"Curve is steeply upward sloping - 2s10s at {slope_2s10s_bps:.0f}bps"
     elif slope_2s10s_bps < 0:
         regime = "inverted"
-        desc = f"Curve is inverted — 2s10s at {slope_2s10s_bps:.0f}bps"
+        desc = f"Curve is inverted - 2s10s at {slope_2s10s_bps:.0f}bps"
     elif abs(butterfly_bps) > 20:
         regime = "humped"
-        desc = f"Curve is humped — 2s5s10s butterfly at {butterfly_bps:.0f}bps"
+        desc = f"Curve is humped - 2s5s10s butterfly at {butterfly_bps:.0f}bps"
     else:
         regime = "normal"
-        desc = f"Curve is normally upward sloping — 2s10s at {slope_2s10s_bps:.0f}bps"
+        desc = f"Curve is normally upward sloping - 2s10s at {slope_2s10s_bps:.0f}bps"
 
     return {
         "regime": regime,

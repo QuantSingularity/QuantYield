@@ -1,5 +1,5 @@
 """
-QuantYield — Service Layer Schemas
+QuantYield - Service Layer Schemas
 Plain dataclasses used by the service layer (pricing, risk, curve_builder, etc.).
 These are decoupled from Django ORM models so services remain framework-agnostic.
 """

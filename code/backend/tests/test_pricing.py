@@ -1,6 +1,6 @@
 """
 Tests for the pricing service layer.
-All tests run without a DB — they only exercise pure math functions.
+All tests run without a DB - they only exercise pure math functions.
 """
 
 from datetime import date

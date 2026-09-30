@@ -1,5 +1,5 @@
 """
-QuantYield — Portfolio API Views
+QuantYield - Portfolio API Views
 Portfolio CRUD, position management, analytics, scenarios, VaR/CVaR, P&L,
 duration buckets.
 """

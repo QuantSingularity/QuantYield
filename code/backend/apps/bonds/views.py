@@ -1,5 +1,5 @@
 """
-QuantYield — Bonds API Views
+QuantYield - Bonds API Views
 Full bond CRUD (ModelViewSet) plus pricing, YTM, spread, KRD,
 cash flows, comparison, OAS, and total return analytics.
 """

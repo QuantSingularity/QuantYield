@@ -275,7 +275,7 @@ export default function ML() {
             <div className="card">
               <div className="card-header">
                 <span className="card-title">
-                  10Y UST Rate Forecast — 60-Day Horizon
+                  10Y UST Rate Forecast - 60-Day Horizon
                 </span>
                 <div style={{ display: "flex", gap: 6 }}>
                   <span className="badge badge-indigo">Transformer</span>
@@ -651,7 +651,7 @@ export default function ML() {
             <div className="card">
               <div className="card-header">
                 <span className="card-title">
-                  GARCH(1,1) Volatility Forecast — 30 Days
+                  GARCH(1,1) Volatility Forecast - 30 Days
                 </span>
                 <span className="badge badge-amber">GARCH(1,1)</span>
               </div>

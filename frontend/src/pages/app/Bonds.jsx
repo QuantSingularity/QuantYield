@@ -321,7 +321,7 @@ function BondDetail({ bond, onClose }) {
                 marginBottom: 10,
               }}
             >
-              Triangular bump — 1bp shift at each key tenor, all others fixed.
+              Triangular bump - 1bp shift at each key tenor, all others fixed.
             </div>
             <ResponsiveContainer width="100%" height={180}>
               <BarChart
@@ -679,7 +679,7 @@ export default function Bonds() {
                     </td>
                     <td>
                       <span className={`badge ${ratingBadge(b.credit_rating)}`}>
-                        {b.credit_rating || "—"}
+                        {b.credit_rating || "-"}
                       </span>
                     </td>
                     <td>

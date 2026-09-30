@@ -1,5 +1,5 @@
 """
-QuantYield — Bond Models
+QuantYield - Bond Models
 Full Django ORM models for bonds with proper persistence.
 """
 
@@ -111,7 +111,7 @@ class Bond(models.Model):
         verbose_name_plural = "Bonds"
 
     def __str__(self):
-        return f"{self.name} ({self.issuer}) — {self.maturity_date}"
+        return f"{self.name} ({self.issuer}) - {self.maturity_date}"
 
     def clean(self):
         if self.maturity_date and self.issue_date:

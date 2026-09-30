@@ -1,4 +1,4 @@
-// QuantYield — Mock Data (matches Django REST API schemas exactly)
+// QuantYield - Mock Data (matches Django REST API schemas exactly)
 
 export const bonds = [
   {
@@ -596,24 +596,24 @@ export const pcaData = {
 
 // Formatting helpers
 export const fmt = {
-  pct: (v, dp = 2) => (v == null ? "—" : (v * 100).toFixed(dp) + "%"),
-  bps: (v) => (v == null ? "—" : (v * 10000).toFixed(1) + "bp"),
+  pct: (v, dp = 2) => (v == null ? "-" : (v * 100).toFixed(dp) + "%"),
+  bps: (v) => (v == null ? "-" : (v * 10000).toFixed(1) + "bp"),
   money: (v) =>
     v == null
-      ? "—"
+      ? "-"
       : "$" + Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 }),
-  moneyM: (v) => (v == null ? "—" : "$" + (Math.abs(v) / 1e6).toFixed(2) + "M"),
-  px: (v) => (v == null ? "—" : v.toFixed(3)),
-  num: (v, dp = 2) => (v == null ? "—" : Number(v).toFixed(dp)),
+  moneyM: (v) => (v == null ? "-" : "$" + (Math.abs(v) / 1e6).toFixed(2) + "M"),
+  px: (v) => (v == null ? "-" : v.toFixed(3)),
+  num: (v, dp = 2) => (v == null ? "-" : Number(v).toFixed(dp)),
   signM: (v) => {
-    if (v == null) return "—";
+    if (v == null) return "-";
     return (
       (v >= 0 ? "+$" : "-$") +
       Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 })
     );
   },
   signPct: (v) =>
-    v == null ? "—" : (v >= 0 ? "+" : "") + (v * 100).toFixed(2) + "%",
+    v == null ? "-" : (v >= 0 ? "+" : "") + (v * 100).toFixed(2) + "%",
 };
 
 export const ratingBadge = (r) => {

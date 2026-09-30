@@ -1,4 +1,4 @@
-# QuantYield — Django Edition
+# QuantYield - Django Edition
 
 **Institutional-grade fixed income analytics platform**, converted from FastAPI to Django REST Framework with a full persistence layer, admin interface, JWT authentication, caching, and comprehensive test suite.
 
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# Edit .env — at minimum set SECRET_KEY
+# Edit .env - at minimum set SECRET_KEY
 # Optionally add FRED_API_KEY for live Treasury data
 ```
 
@@ -131,7 +131,7 @@ The compose stack runs PostgreSQL + Redis + Django (uvicorn, 4 workers) + Nginx.
 
 ## API Reference
 
-### Bonds — `/api/v1/bonds/`
+### Bonds - `/api/v1/bonds/`
 
 | Method   | Endpoint                                 | Description                            |
 | -------- | ---------------------------------------- | -------------------------------------- |
@@ -157,7 +157,7 @@ The compose stack runs PostgreSQL + Redis + Django (uvicorn, 4 workers) + Nginx.
 - `search` (name, issuer, ISIN, sector, rating)
 - `ordering` (name, maturity_date, coupon_rate, created_at)
 
-### Portfolios — `/api/v1/portfolios/`
+### Portfolios - `/api/v1/portfolios/`
 
 | Method             | Endpoint                                       | Description                         |
 | ------------------ | ---------------------------------------------- | ----------------------------------- |
@@ -173,7 +173,7 @@ The compose stack runs PostgreSQL + Redis + Django (uvicorn, 4 workers) + Nginx.
 | `POST`             | `/api/v1/portfolios/{id}/var/`                 | Historical + parametric VaR/CVaR    |
 | `GET`              | `/api/v1/portfolios/{id}/cs01/`                | Credit spread sensitivity           |
 
-### Curves — `/api/v1/curves/`
+### Curves - `/api/v1/curves/`
 
 | Method       | Endpoint                            | Description                           |
 | ------------ | ----------------------------------- | ------------------------------------- |
@@ -187,7 +187,7 @@ The compose stack runs PostgreSQL + Redis + Django (uvicorn, 4 workers) + Nginx.
 
 **Supported curve models**: `nelson_siegel`, `svensson`, `bootstrap`, `cubic_spline`
 
-### Analytics — `/api/v1/analytics/`
+### Analytics - `/api/v1/analytics/`
 
 | Method | Endpoint                                    | Description                           |
 | ------ | ------------------------------------------- | ------------------------------------- |
@@ -284,7 +284,7 @@ python manage.py sync_treasury --save-snapshot
 
 | Variable               | Default                     | Description                                  |
 | ---------------------- | --------------------------- | -------------------------------------------- |
-| `SECRET_KEY`           | (insecure dev key)          | Django secret key — **change in production** |
+| `SECRET_KEY`           | (insecure dev key)          | Django secret key - **change in production** |
 | `DEBUG`                | `True`                      | Debug mode                                   |
 | `DATABASE_URL`         | `sqlite:///db.sqlite3`      | Database connection string                   |
 | `CACHE_URL`            | `locmemcache://`            | Cache backend URL                            |
@@ -298,4 +298,4 @@ python manage.py sync_treasury --save-snapshot
 
 ## License
 
-MIT — see `LICENSE` for details.
+MIT - see `LICENSE` for details.

@@ -1,7 +1,7 @@
 {
   "name": "quantyield-frontend",
   "version": "1.0.0",
-  "description": "QuantYield — Institutional Fixed Income Analytics Platform",
+  "description": "QuantYield - Institutional Fixed Income Analytics Platform",
   "type": "module",
   "scripts": {
     "dev": "vite",

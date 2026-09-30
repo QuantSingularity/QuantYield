@@ -437,7 +437,7 @@ export default function Curves() {
       <div className="card mb-16">
         <div className="card-header">
           <span className="card-title">
-            Historical Rate Comparison — 6 Months
+            Historical Rate Comparison - 6 Months
           </span>
           <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
             GET /api/v1/analytics/yield-history/

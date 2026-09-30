@@ -1,5 +1,5 @@
 """
-QuantYield — Analytics API Views
+QuantYield - Analytics API Views
 Quick pricer, duration/convexity P&L approximation, benchmark spreads,
 rolling yield volatility.
 """

@@ -1,5 +1,5 @@
 /* ============================================================
-   QuantYield — Global Design System
+   QuantYield - Global Design System
    Modern 2025 dark institutional theme
    ============================================================ */
 
@@ -20,7 +20,7 @@
   --border-strong: rgba(99, 120, 180, 0.28);
   --border-focus: #6366f1;
 
-  /* Brand — Indigo */
+  /* Brand - Indigo */
   --indigo-50: #eef2ff;
   --indigo-400: #818cf8;
   --indigo-500: #6366f1;
@@ -29,7 +29,7 @@
   --indigo-glow: rgba(99, 102, 241, 0.15);
   --indigo-ring: rgba(99, 102, 241, 0.25);
 
-  /* Accent — Teal */
+  /* Accent - Teal */
   --teal-400: #2dd4bf;
   --teal-500: #14b8a6;
   --teal-600: #0d9488;

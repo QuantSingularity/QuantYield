@@ -1,5 +1,5 @@
 """
-QuantYield — Portfolio Models
+QuantYield - Portfolio Models
 """
 
 import uuid

@@ -1,6 +1,6 @@
 # QuantYield Frontend
 
-Institutional fixed income analytics platform — React + Vite + Recharts.
+Institutional fixed income analytics platform - React + Vite + Recharts.
 
 ## Tech Stack
 
@@ -18,15 +18,15 @@ Institutional fixed income analytics platform — React + Vite + Recharts.
 
 ## Pages
 
-- **/** — Landing / homepage (features, pricing, CTA)
-- **/login** — Sign in page with demo credentials
-- **/register** — Registration with plan selection and password strength
-- **/app/dashboard** — KPI grid, yield curve, AI forecast, sector allocation, scenarios
-- **/app/bonds** — Searchable bond universe with live detail panel (cash flows, KRD, spreads, total return)
-- **/app/portfolios** — Portfolio cards, positions table, sector/rating/maturity charts, VaR, custom scenarios
-- **/app/curves** — Full 4-model yield curve, Nelson-Siegel params, regime, historical comparison, custom builder
-- **/app/analytics** — Quick pricer, duration approximation, benchmark spreads, rolling vol, yield history
-- **/app/ml** — 5 ML models: Transformer forecaster, Regime classifier, GARCH, XGBoost credit, PCA factors
+- **/** - Landing / homepage (features, pricing, CTA)
+- **/login** - Sign in page with demo credentials
+- **/register** - Registration with plan selection and password strength
+- **/app/dashboard** - KPI grid, yield curve, AI forecast, sector allocation, scenarios
+- **/app/bonds** - Searchable bond universe with live detail panel (cash flows, KRD, spreads, total return)
+- **/app/portfolios** - Portfolio cards, positions table, sector/rating/maturity charts, VaR, custom scenarios
+- **/app/curves** - Full 4-model yield curve, Nelson-Siegel params, regime, historical comparison, custom builder
+- **/app/analytics** - Quick pricer, duration approximation, benchmark spreads, rolling vol, yield history
+- **/app/ml** - 5 ML models: Transformer forecaster, Regime classifier, GARCH, XGBoost credit, PCA factors
 
 ## Prerequisites
 
@@ -127,20 +127,20 @@ POST   /analytics/rolling-volatility/
 ## Running with the Backend
 
 ```bash
-# Terminal 1 — Backend
+# Terminal 1 - Backend
 cd code/backend
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py seed_data
 python manage.py runserver
 
-# Terminal 2 — Frontend
+# Terminal 2 - Frontend
 cd quantyield-frontend
 npm install
 npm run dev
 ```
 
-The frontend dev server proxies nothing by default — update `vite.config.js` to add a proxy:
+The frontend dev server proxies nothing by default - update `vite.config.js` to add a proxy:
 
 ```js
 server: {
@@ -155,7 +155,7 @@ server: {
 
 ```bash
 npm run build
-# Output in dist/ — serve with any static host (Nginx, Vercel, Netlify, S3)
+# Output in dist/ - serve with any static host (Nginx, Vercel, Netlify, S3)
 ```
 
 For Docker, add to the existing `docker-compose.yml`:

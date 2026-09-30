@@ -1,5 +1,5 @@
 """
-QuantYield — Base Django Settings
+QuantYield - Base Django Settings
 """
 
 from pathlib import Path

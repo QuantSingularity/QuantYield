@@ -185,7 +185,7 @@ export default function Analytics() {
         >
           <div className="card">
             <div className="card-title" style={{ marginBottom: 16 }}>
-              Bond Pricer — POST /api/v1/analytics/quick-price/
+              Bond Pricer - POST /api/v1/analytics/quick-price/
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
@@ -341,7 +341,7 @@ export default function Analytics() {
               }}
             >
               Classic inverse price–yield relationship. The curvature represents
-              convexity — the Taylor expansion underestimates price recovery for
+              convexity - the Taylor expansion underestimates price recovery for
               large yield drops.
             </div>
           </div>
@@ -355,7 +355,7 @@ export default function Analytics() {
         >
           <div className="card">
             <div className="card-title" style={{ marginBottom: 16 }}>
-              Duration Approximation — POST
+              Duration Approximation - POST
               /api/v1/analytics/duration-approximation/
             </div>
             <div
@@ -561,7 +561,7 @@ export default function Analytics() {
         <div className="card">
           <div className="card-header">
             <span className="card-title">
-              IG &amp; HY Benchmark Spreads — GET
+              IG &amp; HY Benchmark Spreads - GET
               /api/v1/analytics/benchmark-spreads/
             </span>
             <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
@@ -665,7 +665,7 @@ export default function Analytics() {
         <div className="card">
           <div className="card-header">
             <span className="card-title">
-              Rolling 21-Day Annualised Volatility — 10Y UST
+              Rolling 21-Day Annualised Volatility - 10Y UST
             </span>
             <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
               POST /api/v1/analytics/rolling-volatility/
@@ -772,7 +772,7 @@ export default function Analytics() {
         <div className="card">
           <div className="card-header">
             <span className="card-title">
-              US Treasury Yield History — GET /api/v1/analytics/yield-history/
+              US Treasury Yield History - GET /api/v1/analytics/yield-history/
             </span>
           </div>
           <div style={{ display: "flex", gap: 10, marginBottom: 10 }}>

@@ -1,5 +1,5 @@
 """
-QuantYield — Curves API Views
+QuantYield - Curves API Views
 Treasury curve retrieval (Django-cached), custom curve CRUD,
 interpolation, forward rates, par yields, regime detection, LSTM/AR(1) forecasting.
 """

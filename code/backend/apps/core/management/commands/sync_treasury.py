@@ -70,7 +70,7 @@ class Command(BaseCommand):
                 )
             else:
                 self.stdout.write(
-                    f"  — Snapshot already exists for {today.isoformat()}"
+                    f"  - Snapshot already exists for {today.isoformat()}"
                 )
 
         self.stdout.write(self.style.SUCCESS("Treasury curve sync complete"))

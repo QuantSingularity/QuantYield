@@ -93,7 +93,7 @@ function VarModal({ portfolio, onClose }) {
       <div className="modal" style={{ maxWidth: 480 }}>
         <div className="modal-header">
           <span className="modal-title">
-            VaR Configuration — {portfolio.name}
+            VaR Configuration - {portfolio.name}
           </span>
           <button className="modal-close" onClick={onClose}>
             <X size={14} />
@@ -249,7 +249,7 @@ function CustomScenarioModal({ portfolio, onClose }) {
       <div className="modal" style={{ maxWidth: 480 }}>
         <div className="modal-header">
           <span className="modal-title">
-            Custom Scenario — {portfolio.name}
+            Custom Scenario - {portfolio.name}
           </span>
           <button className="modal-close" onClick={onClose}>
             <X size={14} />
@@ -775,7 +775,7 @@ export default function Portfolios() {
                       <span
                         className={`badge ${ratingBadge(bond.credit_rating)}`}
                       >
-                        {bond.credit_rating || "—"}
+                        {bond.credit_rating || "-"}
                       </span>
                     </td>
                     <td className="text-right mono">
@@ -814,7 +814,7 @@ export default function Portfolios() {
       <div className="card mb-16">
         <div className="card-header">
           <span className="card-title">
-            Standard Rate Scenarios — 10 Shocks
+            Standard Rate Scenarios - 10 Shocks
           </span>
           <button
             className="btn btn-secondary btn-sm"
