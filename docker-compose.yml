@@ -30,7 +30,11 @@ services:
 
   # ── Django API ────────────────────────────────────────────────────────────────
   api:
-    build: .
+    # Build context is ./code so the Dockerfile can COPY both backend/ and
+    # ml_services/ into the image.
+    build:
+      context: ./code
+      dockerfile: backend/Dockerfile
     restart: unless-stopped
     ports:
       - "8000:8000"

@@ -29,13 +29,11 @@ services:
       retries: 5
 
   # ── Django API ───────────────────────────────────────────────────────────────
-  # Build context is ./code so the Dockerfile can COPY both backend/ and
-  # ml_services/ into the image (BUG-7 + BUG-8 fix: was `build: .` which
-  # pointed at the project root where no Dockerfile exists, and excluded
-  # ml_services from the image entirely).
+  # Build context is ../code (relative to this file) so the Dockerfile can COPY
+  # both backend/ and ml_services/ into the image.
   api:
     build:
-      context: ./code
+      context: ../code
       dockerfile: backend/Dockerfile
     restart: unless-stopped
     environment:
