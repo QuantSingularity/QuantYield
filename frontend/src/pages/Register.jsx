@@ -69,7 +69,7 @@ export default function Register() {
     if (strength < 2) return setError("Please use a stronger password");
     setLoading(true);
     await new Promise((r) => setTimeout(r, 700));
-    const result = register(form);
+    const result = await register(form);
     setLoading(false);
     if (result.ok) navigate("/app/dashboard");
     else setError(result.error);

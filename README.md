@@ -84,7 +84,7 @@ QuantYield/
 | Web frontend             | React 18, Vite, React Router, Recharts, Framer Motion, date-fns |
 | Deployment               | Docker Compose, Uvicorn/Gunicorn, Nginx                         |
 | CI/CD                    | GitHub Actions                                                  |
-| Testing                  | pytest (backend); the frontend has no test suite yet            |
+| Testing                  | pytest (backend); Vitest and Testing Library (frontend)         |
 
 ## Architecture
 
@@ -169,6 +169,9 @@ Full request and response schemas are in `docs/02_api_reference.md`, and interac
 ```bash
 # Backend (from code/backend)
 pytest
+
+# Frontend (from frontend)
+npm test
 ```
 
 | Test file                                            | Test count |
@@ -181,15 +184,27 @@ pytest
 
 That's 79 test functions across 5 files. See `docs/08_testing.md` for how to run and extend the suite.
 
+The frontend has its own Vitest suite of 72 tests across 6 files:
+
+| Test file                                           | Test count |
+| :-------------------------------------------------- | :--------- |
+| `src/lib/apiClient.test.js` (HTTP client)           | 14         |
+| `src/context/AuthContext.test.jsx` (login, session) | 20         |
+| `src/context/ToastContext.test.jsx` (notifications) | 7          |
+| `src/pages/Login.test.jsx` (sign in form)           | 5          |
+| `src/pages/Register.test.jsx` (registration form)   | 10         |
+| `src/App.test.jsx` (routing and route guards)       | 16         |
+
 ## CI/CD Pipeline
 
-GitHub Actions (`.github/workflows/cicd.yml`) runs three jobs on push, pull request, and manual dispatch:
+GitHub Actions (`.github/workflows/cicd.yml`) runs four jobs on push, pull request, and manual dispatch:
 
-| Job                 | Depends on          | What it does                                                                       |
-| :------------------ | :------------------ | :--------------------------------------------------------------------------------- |
-| Code Quality Checks | -                   | Formatter checks across the repository                                             |
-| Backend Tests       | Code Quality Checks | Runs the pytest suite with coverage and uploads the coverage report as an artifact |
-| Frontend Build      | Code Quality Checks | Installs dependencies and produces the production web build (no test step)         |
+| Job                    | Depends on          | What it does                                                                                                                                  |
+| :--------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| Code Quality Checks    | -                   | Formatter checks across the repository                                                                                                        |
+| Backend Test & Build   | Code Quality Checks | Runs the pytest suite with coverage and uploads the report as an artifact, then builds the backend Docker image and smoke tests the container |
+| ML Services Validation | Code Quality Checks | Byte-compiles the ML services and checks that every module imports cleanly (the package has no tests of its own)                              |
+| Frontend Test & Build  | Code Quality Checks | Installs dependencies, runs the Vitest suite with coverage (uploaded as an artifact), then produces the production web build and uploads it   |
 
 ## Documentation
 
