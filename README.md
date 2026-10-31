@@ -71,20 +71,20 @@ QuantYield/
 
 ## Technology Stack
 
-| Area                     | Technology                                                      |
-| :----------------------- | :-------------------------------------------------------------- |
-| Web framework            | Django 5, Django REST Framework, drf-spectacular (OpenAPI 3.0)  |
-| Auth                     | djangorestframework-simplejwt                                   |
-| Database                 | SQLite in development, PostgreSQL in production                 |
-| Cache                    | Local memory by default, configurable to Redis via `CACHE_URL`  |
-| Numerical core           | NumPy, SciPy, pandas                                            |
-| Deep learning (optional) | PyTorch, for the Transformer and LSTM forecasters               |
-| ML ensemble (optional)   | scikit-learn (regime detection, PCA), XGBoost (credit spreads)  |
-| Volatility (optional)    | The `arch` library, for GARCH and EGARCH                        |
-| Web frontend             | React 18, Vite, React Router, Recharts, Framer Motion, date-fns |
-| Deployment               | Docker Compose, Uvicorn/Gunicorn, Nginx                         |
-| CI/CD                    | GitHub Actions                                                  |
-| Testing                  | pytest (backend); Vitest and Testing Library (frontend)         |
+| Area                     | Technology                                                           |
+| :----------------------- | :------------------------------------------------------------------- |
+| Web framework            | Django 5, Django REST Framework, drf-spectacular (OpenAPI 3.0)       |
+| Auth                     | djangorestframework-simplejwt                                        |
+| Database                 | SQLite in development, PostgreSQL in production                      |
+| Cache                    | Local memory by default, configurable to Redis via `CACHE_URL`       |
+| Numerical core           | NumPy, SciPy, pandas                                                 |
+| Deep learning (optional) | PyTorch, for the Transformer and LSTM forecasters                    |
+| ML ensemble (optional)   | scikit-learn (regime detection, PCA), XGBoost (credit spreads)       |
+| Volatility (optional)    | The `arch` library, for GARCH and EGARCH                             |
+| Web frontend             | React 18, Vite, React Router, Recharts, Framer Motion, date-fns      |
+| Deployment               | Docker Compose, Uvicorn/Gunicorn, Nginx                              |
+| CI/CD                    | GitHub Actions                                                       |
+| Testing                  | pytest (backend, ML services); Vitest and Testing Library (frontend) |
 
 ## Architecture
 
@@ -170,6 +170,9 @@ Full request and response schemas are in `docs/02_api_reference.md`, and interac
 # Backend (from code/backend)
 pytest
 
+# ML services (from code/ml_services)
+pytest
+
 # Frontend (from frontend)
 npm test
 ```
@@ -183,6 +186,19 @@ npm test
 | `test_auth_api.py` (API integration)                 | 15         |
 
 That's 79 test functions across 5 files. See `docs/08_testing.md` for how to run and extend the suite.
+
+The ML services have their own pytest suite of 126 tests across 6 files:
+
+| Test file                                                            | Test count |
+| :------------------------------------------------------------------- | :--------- |
+| `tests/test_pca_factor_model.py` (curve decomposition)               | 22         |
+| `tests/test_volatility_model.py` (GARCH and historical volatility)   | 15         |
+| `tests/test_forecaster.py` (AR(1) rate forecaster, caching)          | 21         |
+| `tests/test_regime_classifier.py` (regime features, rules, ensemble) | 35         |
+| `tests/test_credit_spread_model.py` (credit spread ensemble)         | 25         |
+| `tests/test_schemas.py` (result types and package exports)           | 8          |
+
+Three of those tests are strict expected failures (`xfail`) that record known defects: multi-day EGARCH forecasts fall back to historical volatility, a constant rate series produces NaN forecasts, and the rule-based regime fallback returns probabilities that sum to 1.2. They fail the run as soon as the defect is fixed, which is the cue to remove the marker.
 
 The frontend has its own Vitest suite of 72 tests across 6 files:
 
@@ -199,12 +215,12 @@ The frontend has its own Vitest suite of 72 tests across 6 files:
 
 GitHub Actions (`.github/workflows/cicd.yml`) runs four jobs on push, pull request, and manual dispatch:
 
-| Job                    | Depends on          | What it does                                                                                                                                  |
-| :--------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
-| Code Quality Checks    | -                   | Formatter checks across the repository                                                                                                        |
-| Backend Test & Build   | Code Quality Checks | Runs the pytest suite with coverage and uploads the report as an artifact, then builds the backend Docker image and smoke tests the container |
-| ML Services Validation | Code Quality Checks | Byte-compiles the ML services and checks that every module imports cleanly (the package has no tests of its own)                              |
-| Frontend Test & Build  | Code Quality Checks | Installs dependencies, runs the Vitest suite with coverage (uploaded as an artifact), then produces the production web build and uploads it   |
+| Job                            | Depends on          | What it does                                                                                                                                  |
+| :----------------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| Code Quality Checks            | -                   | Formatter checks across the repository                                                                                                        |
+| Backend Test & Build           | Code Quality Checks | Runs the pytest suite with coverage and uploads the report as an artifact, then builds the backend Docker image and smoke tests the container |
+| ML Services Tests & Validation | Code Quality Checks | Byte-compiles the ML services, checks that every module imports cleanly, then runs the pytest suite with coverage (uploaded as an artifact)   |
+| Frontend Test & Build          | Code Quality Checks | Installs dependencies, runs the Vitest suite with coverage (uploaded as an artifact), then produces the production web build and uploads it   |
 
 ## Documentation
 
